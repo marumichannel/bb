@@ -9,8 +9,9 @@ Press 'B' (or click or tap) along with the beat when the rings line up with the 
 ## Known Issues
 
 * Game currently can't handle resizing/orientation changes without a reload.
-* Sound playing doesn't alway work right on mobile browsers.
-* 'MISS' timeing might be a little wonky.
+* Sound playing doesn't always work right on mobile browsers.
+* 'MISS' timing might be a little wonky.
+* Could handle scaling of logo better on start page.
 
 ## Disclaimers, Acknowledgements, and Licensing
 This software is not affiliated in any way with Lantis, Bushiraod Inc., or KLabGames.
