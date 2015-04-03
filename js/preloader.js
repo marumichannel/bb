@@ -9,6 +9,7 @@ Bb.Preloader = function (game) {
 Bb.Preloader.prototype = {
 
     preload: function () {
+        this.game.stage.disableVisibilityChange = true;
         this.input.maxPointers = 1;
         var game = this.game;
         game.stage.backgroundColor = '#000000';
