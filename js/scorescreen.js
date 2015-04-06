@@ -238,20 +238,22 @@ Bb.ScoreScreen.prototype = {
             game.input.onDown.add(this.endGame, this);
         }, this);
     },
-    endGame: function() {
-        var game = this.game;
-        this.se.play();
-        game.add.tween(game.world).to({alpha: 0}, 1000, Phaser.Easing.Linear.None, true);
-        game.time.events.add(2000, function () {
-            document.querySelector('.hidden').className = '';
-            window.addEventListener("keydown", function(e) {
-                if (e.keyCode == "66") { //b
-                    location.reload();
-                }
-            }, false);
-            game.destroy();
-            Phaser.SoundManager.context = null;
-            this.webkitAudioContext = null;
-        }, this);
+    endGame: function(input) {
+        if (!input.isMouse) { //only on tap or 'b', not click.
+            var game = this.game;
+            this.se.play();
+            game.add.tween(game.world).to({alpha: 0}, 1000, Phaser.Easing.Linear.None, true);
+            game.time.events.add(2000, function () {
+                document.querySelector('.hidden').className = '';
+                window.addEventListener("keydown", function(e) {
+                    if (e.keyCode == "66") { //b
+                        location.reload();
+                    }
+                }, false);
+                game.destroy();
+                Phaser.SoundManager.context = null;
+                this.webkitAudioContext = null;
+            }, this);
+        }
     }
 };

@@ -31,8 +31,10 @@ Bb.MainMenu.prototype = {
 
     },
 
-    startGame: function (pointer) {
-        this.se.play();
-        this.state.start('Game');
+    startGame: function (input) {
+        if (!input.isMouse) { //only on tap or 'b', not click.
+            this.se.play();
+            this.state.start('Game');
+        }
     },
 };
