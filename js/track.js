@@ -21,17 +21,16 @@ Track.prototype.init = function () {
     this.button.anchor.setTo(0.5, 0.5);
 
     this.notePool = game.add.group();
-    this.notePool.createMultiple(100, 'rings', 1);
+    this.notePool.createMultiple(100, 'rings');
     this.notePool.setAll('anchor.x', 0.5);
     this.notePool.setAll('anchor.y', 0.5);
 
-    var additionalScaling = 0.95;
     this.popPool = game.add.group();
     this.popPool.createMultiple(100, 'pop');
     this.popPool.setAll('anchor.x', 0.5);
     this.popPool.setAll('anchor.y', 0.5);
-    this.popPool.setAll('scale.x', this.scaling * additionalScaling);
-    this.popPool.setAll('scale.y', this.scaling * additionalScaling);
+    this.popPool.setAll('scale.x', this.scaling);
+    this.popPool.setAll('scale.y', this.scaling);
     this.popPool.setAll('alpha', 0.8);
     this.popPool.forEach(function (pop) {
       pop.animations.add('pow', [0,1,2,3,4,5,6,7], 20);
@@ -50,17 +49,18 @@ Track.prototype.init = function () {
         popPrime.destroy();
     });
 
+    var throbberScaling = this.scaling / 2;
     this.throbber = game.add.group();
     game.add.text(0, 0, '♫', {font: '400 300px Arial', fill: '#ecd', strokeThickness: 10, stroke: '#fff'}, this.throbber);
     game.add.text(0, 0, '♪', {font: 'bold 100px Arial', fill: '#ecd', strokeThickness: 10, stroke: '#fff'}, this.throbber);
     game.add.text(300, 300, '♪', {font: 'bold 100px Arial', fill: '#ecd', strokeThickness: 10, stroke: '#fff'}, this.throbber)
     .anchor.setTo(1, 1);
     this.throbber.alpha = 0.5;
-    this.throbber.x = this.origin.x - 150 * this.scaling;
-    this.throbber.y = this.origin.y - 150 * this.scaling;
-    this.throbber.scale.setTo(this.scaling, this.scaling);
-    var tween1 = game.add.tween(this.throbber.scale).to({x: this.scaling + 0.04, y: this.scaling + 0.04}, 1000, Phaser.Easing.Quadratic.InOut);
-    var tween2 = game.add.tween(this.throbber.scale).to({x: this.scaling, y: this.scaling}, 1000, Phaser.Easing.Quintic.InOut);
+    this.throbber.x = this.origin.x - 150 * throbberScaling;
+    this.throbber.y = this.origin.y - 150 * throbberScaling;
+    this.throbber.scale.setTo(throbberScaling, throbberScaling);
+    var tween1 = game.add.tween(this.throbber.scale).to({x: throbberScaling + 0.04, y: throbberScaling + 0.04}, 1000, Phaser.Easing.Quadratic.InOut);
+    var tween2 = game.add.tween(this.throbber.scale).to({x: throbberScaling, y: throbberScaling}, 1000, Phaser.Easing.Quintic.InOut);
     tween1.chain(tween2);
     tween2.chain(tween1);
     tween1.start();

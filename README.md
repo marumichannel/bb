@@ -26,6 +26,7 @@ The following files contain material copyright *Lantis* 2014.
 * ssa.jpg
 * soramaru.png
 * loveliver.png
+* loveliver1x.png
 
 Program source code is available under the [MIT License](http://opensource.org/licenses/MIT).
 
@@ -42,5 +43,7 @@ If this is not legally possible:
 I grant any entity the right to use the following graphics for any purpose, without any conditions, unless such conditions are required by law.
 
 * rings.png
+* ring1x.png
 * sparkler.png
+* sparkler1x.png
 * scorebg.png

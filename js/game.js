@@ -32,7 +32,7 @@ Bb.Game.prototype = {
                        ];
         this.notes = bbNotes;
         var aspect = game.windowHelper.getScreenRatio();
-        var scaling = game.world.height / 420 * (aspect > 1 ? 0.25 : 0.25);
+        var scaling = game.world.height / 210 * (aspect > 1 ? 0.25 : 0.25);
         this.textHeight = game.world.height / 10 *(aspect > 1 ? 1 : 0.8);
         this.songPosition = 0;
         this.tracks = [];
@@ -40,7 +40,7 @@ Bb.Game.prototype = {
             game: this.game,
             id: 'main',
             origin: {x: game.world.centerX, y: game.world.height * 0.2},
-            target: {x: game.world.centerX, y: game.world.height * 0.99 - (scaling * 210)},
+            target: {x: game.world.centerX, y: game.world.height * 0.99 - (scaling * 105)},
             targetSprite: 'loveliver',
             score: this.notes,
             scaling: scaling,

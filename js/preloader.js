@@ -21,14 +21,14 @@ Bb.Preloader.prototype = {
         note.anchor.set(1, 0.5);
         game.add.tween(note).to({y: 32}, 750, Phaser.Easing.Sinusoidal.InOut, true, 0, -1, true);
 
-        this.load.image('loveliver','assets/sprites/loveliver.png');
+        this.load.image('loveliver','assets/sprites/loveliver1x.png');
         this.load.image('scorebg','assets/bg/scorebg.png');
         this.load.image('background','assets/bg/ssa.jpg');
         this.load.image('titlebg','assets/bg/bb.jpg');
         this.load.image('soramaru','assets/sprites/soramaru.png');
         this.load.image('gamelogo','assets/sprites/bb.png');
-        this.load.spritesheet('rings','assets/sprites/rings.png', 420, 420, 3);
-        this.load.spritesheet('pop','assets/sprites/sparkler.png', 600, 600, 8);
+        this.load.spritesheet('rings','assets/sprites/ring1x.png');
+        this.load.spritesheet('pop','assets/sprites/sparkler1x.png', 285, 285, 8);
         this.load.audio('shan_perfect',['assets/audio/shan_perfect.ogg','assets/audio/shan_perfect.mp3']);
         this.load.audio('shan_great',['assets/audio/shan_great.ogg','assets/audio/shan_great.mp3']);
         this.load.audio('shan_good',['assets/audio/shan_good.ogg','assets/audio/shan_good.mp3']);
